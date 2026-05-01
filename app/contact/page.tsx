@@ -1,16 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import styles from './contact.module.css';
-
-// ✅ Paste your EmailJS credentials here
-const EMAILJS_SERVICE_ID  = 'namecheap_smtp';
-const EMAILJS_TEMPLATE_ID = 'template_72idj4c';
-const EMAILJS_PUBLIC_KEY  = 'h_AbclLxwxxX8Gsel';
 
 const contactInfo = [
   {
@@ -69,19 +63,16 @@ export default function ContactPage() {
     setStatus('loading');
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          phone: form.phone || 'N/A',
-          message: form.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+
       setStatus('success');
-      setForm({ name: '', email: '', phone: '', message: '' }); // clear form
+      setForm({ name: '', email: '', phone: '', message: '' });
     } catch (err) {
       console.error(err);
       setStatus('error');

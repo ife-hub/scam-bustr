@@ -1,15 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import styles from './consultation.module.css';
-
-const EMAILJS_SERVICE_ID  = 'namecheap_smtp';
-const EMAILJS_TEMPLATE_ID = 'template_lvlimvr';
-const EMAILJS_PUBLIC_KEY  = 'h_AbclLxwxxX8Gsel';
 
 export default function ConsultationPage() {
   const [form, setForm] = useState({
@@ -37,21 +32,14 @@ export default function ConsultationPage() {
     setStatus('loading');
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          full_name:    form.full_name,
-          from_email:   form.email,
-          phone:        form.phone || 'N/A',
-          amount_lost:  form.amount_lost,
-          country:      form.country,
-          scam_company: form.scam_company,
-          scam_type:    form.scam_type || 'Not specified',
-          case_outline: form.case_outline || 'N/A',
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+
       setStatus('success');
       setForm({
         full_name: '', email: '', phone: '', amount_lost: '',
