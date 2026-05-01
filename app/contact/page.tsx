@@ -9,8 +9,8 @@ import styles from './contact.module.css';
 
 // ✅ Paste your EmailJS credentials here
 const EMAILJS_SERVICE_ID  = 'namecheap_smtp';
-const EMAILJS_TEMPLATE_ID = 'template_a02vqq7';
-const EMAILJS_PUBLIC_KEY  = 'z0h0MHRSbiAP4EKHI';
+const EMAILJS_TEMPLATE_ID = 'template_72idj4c';
+const EMAILJS_PUBLIC_KEY  = 'h_AbclLxwxxX8Gsel';
 
 const contactInfo = [
   {
@@ -35,8 +35,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'support@scambustr.com',
-    href: 'mailto:support@scambustr.com',
+    value: 'help@scambustr.com',
+    href: 'mailto:help@scambustr.com',
   },
   {
     id: 'address',

@@ -8,8 +8,8 @@ import Navbar from '@/components/Navbar';
 import styles from './consultation.module.css';
 
 const EMAILJS_SERVICE_ID  = 'namecheap_smtp';
-const EMAILJS_TEMPLATE_ID = 'template_6jkpqhb';
-const EMAILJS_PUBLIC_KEY  = 'z0h0MHRSbiAP4EKHI';
+const EMAILJS_TEMPLATE_ID = 'template_lvlimvr';
+const EMAILJS_PUBLIC_KEY  = 'h_AbclLxwxxX8Gsel';
 
 export default function ConsultationPage() {
   const [form, setForm] = useState({

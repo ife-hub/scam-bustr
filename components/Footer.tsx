@@ -60,8 +60,8 @@ export default function Footer() {
           <ul className={styles.contactList}>
             <li>
               <span className={styles.contactLabel}>Email</span>
-              <a href="mailto:support@scambustr.com" className={styles.contactValue}>
-                support@scambustr.com
+              <a href="mailto:help@scambustr.com" className={styles.contactValue}>
+                help@scambustr.com
               </a>
             </li>
             <li>

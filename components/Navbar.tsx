@@ -27,7 +27,7 @@ export default function Navbar() {
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.topBar}>
           <span>Get in touch</span>
-          <span>support@scambustr.com</span>
+          <span>help@scambustr.com</span>
         </div>
         <div className={styles.navInner}>
           <Link href="/" className={styles.logo} onClick={close}>
