@@ -1,0 +1,393 @@
+/* ── Base ── */
+.main {
+  min-height: 100vh;
+  background: #faf9f7;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 7vh;
+}
+
+/* ── Page Header ── */
+.pageHeader {
+  background: linear-gradient(135deg, #faf9f7 0%, #f2ede8 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 5.5rem 4rem 1.8rem;
+}
+
+.pageHeaderInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageHeaderTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.breadcrumb a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #c0392b;
+}
+
+.breadcrumbSep {
+  color: #bbb;
+}
+
+/* ── Intro section ── */
+.intro {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  position: relative;
+}
+
+.introIcon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.introEyebrow {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.introHeading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+.introWatermark {
+  position: absolute;
+  top: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  color: rgba(192, 57, 43, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* ── Service Cards Grid ── */
+.cards {
+  padding: 2rem 4rem 5rem;
+}
+
+.cardGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  padding: 2.2rem 1.6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  animation: fadeUp 0.5s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #c0392b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  border-color: rgba(192, 57, 43, 0.15);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Accent card (Credit Card Fraud) */
+.cardAccent {
+  background: linear-gradient(145deg, #c0392b 0%, #96281b 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.cardAccent::before {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.cardAccent:hover {
+  border-color: transparent;
+}
+
+.cardAccent .cardTitle {
+  color: #fff;
+}
+
+.cardAccent .cardDesc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cardAccent .cardLink {
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.cardAccent .cardLink:hover {
+  color: #fff;
+}
+
+/* Icon circle */
+.cardIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.08);
+}
+
+.cardIconAccent {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 1.2rem;
+}
+
+.cardLink {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #c0392b;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+  padding-bottom: 0.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.cardLink:hover {
+  gap: 0.6rem;
+  color: #96281b;
+}
+
+/* ── Process / How It Works ── */
+.process {
+  background: #1a1a1a;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.processSwoosh {
+  height: 80px;
+  background: #faf9f7;
+  clip-path: ellipse(55% 100% at 50% 0%);
+  margin-bottom: -1px;
+}
+
+.processInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 4rem 0;
+  text-align: center;
+}
+
+.processEyebrow {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.processHeading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4rem;
+}
+
+.processWatermark {
+  position: absolute;
+  top: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  color: rgba(192, 57, 43, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 2.5rem;
+  align-items: start;
+  text-align: left;
+}
+
+.step {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.stepNum {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #c0392b;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.03em;
+}
+
+.stepTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+.stepDesc {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.75;
+}
+
+.stepCta {
+  display: flex;
+  align-items: center;
+  padding-top: 3.8rem;
+}
+
+.stepCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.stepCtaBtn:hover {
+  background: #96281b;
+  transform: scale(1.03);
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stepCta {
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards { padding: 2rem 1.5rem 3rem; }
+  .cardGrid { grid-template-columns: 1fr; }
+  .pageHeader { padding: 5rem 1.5rem 1.5rem; }
+  .intro { padding: 3rem 1.5rem 2rem; }
+  .processInner { padding: 3rem 1.5rem 0; }
+  .steps { grid-template-columns: 1fr; }
+}

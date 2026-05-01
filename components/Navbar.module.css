@@ -1,0 +1,265 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.topBar {
+  background: #111;
+  color: #aaa;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.4rem 2rem;
+  letter-spacing: 0.04em;
+  font-family: 'Syne', sans-serif;
+}
+
+.navInner {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.scrolled .navInner {
+  padding: 0.7rem 3rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: #c0392b;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #c0392b;
+  transition: width 0.2s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navLinks a:hover {
+  color: #c0392b;
+}
+
+.ctaBtn {
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.ctaBtn:hover {
+  background: #a93226;
+  transform: translateY(-1px);
+}
+
+/* ─── Hamburger button ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile drawer ─── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 99;
+  flex-direction: column;
+  padding: 6rem 2rem 3rem;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.mobileLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.mobileLinks li {
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.mobileLinks a {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  transition: color 0.2s;
+}
+
+.mobileLinks a::after {
+  content: '→';
+  font-size: 1rem;
+  color: #c0392b;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.mobileLinks a:hover {
+  color: #c0392b;
+}
+
+.mobileLinks a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobileCta {
+  display: block;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  margin-top: 2rem;
+  transition: background 0.2s;
+}
+
+.mobileCta:hover {
+  background: #a93226;
+}
+
+/* ─── Tablet (≤768px) ─── */
+@media (max-width: 768px) {
+  .topBar {
+    gap: 1rem;
+    padding: 0.4rem 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .navInner {
+    padding: 0.9rem 1.25rem;
+  }
+
+  .scrolled .navInner {
+    padding: 0.7rem 1.25rem;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .ctaBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}

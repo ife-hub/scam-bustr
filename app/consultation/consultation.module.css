@@ -1,0 +1,231 @@
+/* ── Main Layout ── */
+.main {
+  min-height: 100vh;
+  background: #faf9f7;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 7vh;
+}
+
+/* ── Page Header (Breadcrumbs & Title) ── */
+.pageHeader {
+  background: linear-gradient(135deg, #faf9f7 0%, #f2ede8 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 5.5rem 4rem 1.8rem;
+}
+
+.pageHeaderInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageHeaderTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.breadcrumb a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: #c0392b; }
+
+.breadcrumbSep { color: #bbb; }
+
+/* ── Consultation Form Card ── */
+.formSection {
+  padding: 4rem 4rem 6rem;
+}
+
+.formCard {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Branding Side */
+.formIntro {
+  position: sticky;
+  top: 12vh;
+}
+
+.formEyebrow {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #c0392b;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.formHeading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #111;
+  margin-bottom: 1.5rem;
+  line-height: 1.05;
+}
+
+.formBlurb {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Fields & Inputs */
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.fieldInput {
+  background: #f9f8f6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px; /* Slightly more modern than the full pill for forms */
+  padding: 0.85rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #111;
+  outline: none;
+  transition: all 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fieldInput:focus {
+  background: #fff;
+  border-color: #c0392b;
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.08);
+}
+
+/* Dropdown specific */
+select.fieldInput {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 15px) center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.fieldTextarea {
+  background: #f9f8f6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #111;
+  outline: none;
+  resize: vertical;
+  transition: all 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fieldTextarea:focus {
+  background: #fff;
+  border-color: #c0392b;
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.08);
+}
+
+/* Footer / Submit */
+.formFooter {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.sendBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.sendBtn:hover {
+  background: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Responsive Behavior ── */
+@media (max-width: 1024px) {
+  .formCard {
+    gap: 3rem;
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .formCard {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.5rem 2rem;
+  }
+  .formIntro { position: relative; top: 0; }
+  .fieldRow { grid-template-columns: 1fr; gap: 1.2rem; }
+}
+
+@media (max-width: 700px) {
+  .pageHeader { padding: 5rem 1.5rem 1.5rem; }
+  .formSection { padding: 2rem 1.5rem 4rem; }
+  .pageHeaderTitle { font-size: 1.5rem; }
+}

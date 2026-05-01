@@ -1,0 +1,190 @@
+.section {
+  padding: 110px 0;
+  border-top: 1px solid var(--border);
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dim { color: var(--text-muted); }
+
+/* ─── Stats bar ─── */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.statItem {
+  background: var(--surface);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+  transition: background 0.2s;
+}
+.statItem:hover { background: var(--surface-2); }
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ─── Values grid ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card {
+  background: var(--bg);
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+.card:hover { background: var(--surface); }
+
+.cardIcon {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--accent-2);
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.cardDesc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── Tablet (≤860px) ─── */
+@media (max-width: 860px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .heading {
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  }
+
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 36px;
+  }
+
+  .statItem {
+    padding: 22px;
+  }
+
+  .statVal {
+    font-size: 1.9rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── Mobile (≤540px) ─── */
+@media (max-width: 540px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .header {
+    margin-bottom: 28px;
+  }
+
+  .heading {
+    font-size: clamp(1.6rem, 7.5vw, 2rem);
+    letter-spacing: 0.02em;
+  }
+
+  .statsBar {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 28px;
+  }
+
+  .statItem {
+    padding: 18px 12px;
+  }
+
+  .statVal {
+    font-size: 1.65rem;
+  }
+
+  .statLabel {
+    font-size: 0.65rem;
+    letter-spacing: 0.07em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .cardTitle {
+    font-size: 0.92rem;
+  }
+
+  .cardDesc {
+    font-size: 0.82rem;
+  }
+}

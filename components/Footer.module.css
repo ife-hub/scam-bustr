@@ -1,0 +1,337 @@
+.footer {
+  background: #111;
+  color: #fff;
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.swooshTop {
+  height: 60px;
+  background: #faf9f7;
+  clip-path: ellipse(55% 100% at 50% 0%);
+  margin-bottom: -1px;
+}
+
+/* ─── Main grid ─── */
+.inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr 1.4fr;
+  gap: 3rem;
+  padding: 4rem 4rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Brand column ─── */
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
+  display: block;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #c0392b;
+  margin-top: 0.5rem;
+}
+
+.brandDesc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.8;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  width: fit-content;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.badge:hover {
+  border-color: rgba(192, 57, 43, 0.4);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.badgeIcon {
+  color: #c0392b;
+  font-size: 0.7rem;
+}
+
+/* ─── Generic column ─── */
+.col {
+  padding-top: 0.3rem;
+}
+
+.colHeading {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 1.4rem;
+  position: relative;
+}
+
+/* ─── Nav links ─── */
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s, padding-left 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navLink::before {
+  content: '–';
+  color: #c0392b;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+
+.navLink:hover::before {
+  opacity: 1;
+}
+
+/* ─── Hours column ─── */
+.hoursLine {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+
+.highlight {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.availBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27ae60;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+/* ─── Contact column ─── */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contactLabel {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 0.3rem;
+}
+
+.contactValue {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  line-height: 1.65;
+  font-style: normal;
+  transition: color 0.2s;
+}
+
+a.contactValue:hover {
+  color: #c0392b;
+}
+
+/* ─── Bottom bar ─── */
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bottomLink {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bottomLink:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sep {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+}
+
+/* ─── Animations ─── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.4); }
+}
+
+/* ─── Tablet (≤1024px) ─── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 3.5rem 2.5rem 2.5rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+
+  .brandDesc {
+    max-width: 100%;
+  }
+
+  .badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .bottomBar {
+    padding: 1.4rem 2.5rem;
+  }
+}
+
+/* ─── Mobile (≤600px) ─── */
+@media (max-width: 600px) {
+  .swooshTop {
+    height: 40px;
+    clip-path: ellipse(70% 100% at 50% 0%);
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem 2rem;
+    gap: 2rem;
+  }
+
+  .brand {
+    grid-column: unset;
+  }
+
+  .brandDesc {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .colHeading {
+    margin-bottom: 1rem;
+  }
+
+  .navList {
+    gap: 0.65rem;
+  }
+
+  .navLink {
+    font-size: 0.88rem;
+    /* Disable slide animation on touch — no hover state */
+    transition: color 0.2s;
+  }
+
+  .navLink:hover {
+    padding-left: 0;
+  }
+
+  .hoursLine {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .contactList {
+    gap: 1rem;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.2rem 1.25rem;
+    text-align: center;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.6rem;
+  }
+}
